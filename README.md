@@ -1,60 +1,49 @@
 <div align="center">
 
-<a href="https://Epeius.ai/" target="_blank">
+<a href="https://mnemos.ai/" target="_blank">
   <picture>
-    <img alt="Epeius" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv6KPnR764HTVeyp3ijLgpQ3h1i60wGQhRAvqyC413sg&s=10" width="200px" height="auto">
+    <img alt="Mnemos" src="https://raw.githubusercontent.com/mnemos-ai/mnemos/main/docs/images/logo.svg" width="200px" height="auto">
   </picture>
 </a>
 
-### Epeius: The Context Database for AI Agents
+### Mnemos: The Context Database for AI Agents
 
 English / [中文](README_CN.md) / [日本語](README_JA.md)
 
-<a href="https://www.Epeius.ai">Website</a> · <a href="https://Epeius.ai/studio">Live Demo</a> · <a href="https://github.com/volcengine/Epeius">GitHub</a> · <a href="https://github.com/volcengine/Epeius/issues">Issues</a> · <a href="https://docs.Epeius.ai/">Docs</a>
+<a href="https://www.mnemos.ai">Website</a> · <a href="https://mnemos.ai/studio">Live Demo</a> · <a href="https://github.com/mnemos-ai/mnemos">GitHub</a> · <a href="https://github.com/mnemos-ai/mnemos/issues">Issues</a> · <a href="https://docs.mnemos.ai/">Docs</a>
 
-[![](https://img.shields.io/github/v/release/volcengine/Epeius?color=369eff\&labelColor=black\&logo=github\&style=flat-square)](https://github.com/volcengine/Epeius/releases)
-[![](https://img.shields.io/github/stars/volcengine/Epeius?labelColor\&style=flat-square\&color=ffcb47)](https://github.com/volcengine/Epeius)
-[![](https://img.shields.io/github/issues/volcengine/Epeius?labelColor=black\&style=flat-square\&color=ff80eb)](https://github.com/volcengine/Epeius/issues)
-[![](https://img.shields.io/github/contributors/volcengine/Epeius?color=c4f042\&labelColor=black\&style=flat-square)](https://github.com/volcengine/Epeius/graphs/contributors)
-[![](https://img.shields.io/badge/license-AGPLv3-white?labelColor=black\&style=flat-square)](https://github.com/volcengine/Epeius/blob/main/LICENSE)
-[![](https://img.shields.io/github/last-commit/volcengine/Epeius?color=c4f042\&labelColor=black\&style=flat-square)](https://github.com/volcengine/Epeius/commits/main)
+[![](https://img.shields.io/github/v/release/mnemos-ai/mnemos?color=369eff&labelColor=black&logo=github&style=flat-square)](https://github.com/mnemos-ai/mnemos/releases)
+[![](https://img.shields.io/github/stars/mnemos-ai/mnemos?labelColor&style=flat-square&color=ffcb47)](https://github.com/mnemos-ai/mnemos)
+[![](https://img.shields.io/github/issues/mnemos-ai/mnemos?labelColor=black&style=flat-square&color=ff80eb)](https://github.com/mnemos-ai/mnemos/issues)
+[![](https://img.shields.io/github/contributors/mnemos-ai/mnemos?color=c4f042&labelColor=black&style=flat-square)](https://github.com/mnemos-ai/mnemos/graphs/contributors)
+[![](https://img.shields.io/badge/license-AGPLv3-white?labelColor=black&style=flat-square)](https://github.com/mnemos-ai/mnemos/blob/main/LICENSE)
+[![](https://img.shields.io/github/last-commit/mnemos-ai/mnemos?color=c4f042&labelColor=black&style=flat-square)](https://github.com/mnemos-ai/mnemos/commits/main)
 
 👋 Join our Community
 
-📱 <a href="https://docs.Epeius.ai/en/about/01-about-us#lark-group">Lark Group</a> · <a href="https://docs.Epeius.ai/en/about/01-about-us#wechat-group">WeChat</a> · <a href="https://discord.com/invite/eHvx8E9XF3">Discord</a> · <a href="https://x.com/Epeiusai">X</a>
-
-<a href="https://trendshift.io/repositories/19668" target="_blank"><img src="https://trendshift.io/api/badge/repositories/19668" alt="volcengine%2FEpeius | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+📱 <a href="https://docs.mnemos.ai/en/about/01-about-us#lark-group">Lark Group</a> · <a href="https://docs.mnemos.ai/en/about/01-about-us#wechat-group">WeChat</a> · <a href="https://discord.gg/mnemos">Discord</a> · <a href="https://x.com/mnemosai">X</a>
 
 </div>
 
 ***
 
-## What is Epeius
+## What is Mnemos
 
-Epeius is an open-source context database for AI agents. It gives agents a place to store knowledge, remember users, and reuse experience across sessions.
+Mnemos is an open-source context database for AI agents. It gives agents a place to store knowledge, remember users, and reuse experience across sessions — without rebuilding context from scratch every time.
 
-Epeius organizes context as a virtual filesystem under `epeius://`. Agents can operate on it like files: use `ls`, `tree`, `read`, and `write` to browse directories, read, create, and edit content, or search within a directory. Directory summaries support on-demand loading.
+Mnemos organizes context as a virtual filesystem under `mnemos://`. Agents operate on it like files: `ls`, `tree`, `read`, and `write` to browse directories, read, create, and edit content, or search within a directory. Directory summaries support on-demand loading, so agents only pull the context they actually need.
 
-<a href="https://Epeius.ai/studio" target="_blank" rel="noopener noreferrer">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/studio-playground-dark.png">
-    <img src="docs/images/studio-playground.png" alt="Epeius Studio: browse context and try semantic search">
-  </picture>
-</a>
+[Try Mnemos Studio](https://mnemos.ai/studio) in your browser, no installation required.
 
-[Try Epeius Studio](https://Epeius.ai/studio) in your browser, no installation required. [Self-host Web Studio](web-studio/README.md).
+## Why Mnemos
 
-## Why Epeius
-
-- **One filesystem for all context.** Resources hold documents and code; memories retain user preferences and experience; skills define how to perform tasks. Each has a `epeius://` URI for browsing and retrieval. → [epeius URI](https://docs.Epeius.ai/en/concepts/04-epeius-uri) · [Context types](https://docs.Epeius.ai/en/concepts/02-context-types)
-- **Load only the context you need.** Directory abstracts (L0) and overviews (L1) help agents decide when to read full content (L2). → [Context layers](https://docs.Epeius.ai/en/concepts/03-context-layers)
-- **Search within the directory structure.** Vector search finds candidate directories, then explores their contents. `find` runs a query directly; `search` can use session context to plan retrieval. → [Retrieval](https://docs.Epeius.ai/en/concepts/07-retrieval)
-- **Turn sessions into memory.** Committing a session archives the conversation and starts background extraction. Memory policies control what is retained; candidates are compared with existing memories for creation, merging, or skipping. With epeiusBot enabled, `ov compile` uses a skill to organize source material into a wiki, knowledge graph, or report. → [Sessions](https://docs.Epeius.ai/en/concepts/08-session) · [Context compilation](https://docs.Epeius.ai/en/context-compilation/01-overview)
-
-[Architecture](https://docs.Epeius.ai/en/concepts/01-architecture) · [Design rationale](https://blog.Epeius.ai/post/Epeius-context-database/)
+- **One filesystem for all context.** Resources hold documents and code; memories retain user preferences and experience; skills define how to perform tasks. Each has a `mnemos://` URI for browsing and retrieval.
+- **Load only the context you need.** Directory abstracts (L0) and overviews (L1) help agents decide when to read full content (L2).
+- **Search within the directory structure.** Vector search finds candidate directories, then explores their contents. `find` runs a query directly; `search` uses session context to plan retrieval.
+- **Turn sessions into memory.** Committing a session archives the conversation and starts background extraction. Memory policies control what is retained; candidates are compared with existing memories for creation, merging, or skipping.
 
 ```
-epeius://
+mnemos://
 ├── resources/              # Resources: project docs, repos, web pages, etc.
 │   └── my_project/
 │       ├── docs/
@@ -82,10 +71,8 @@ The three loading tiers:
 - **L1 (Overview)**: core information and usage scenarios for planning.
 - **L2 (Details)**: the full original data, read only when needed.
 
-Semantically processed directories carry L0/L1 summaries, so agents can judge relevance before reading full files:
-
 ```
-epeius://resources/my_project/
+mnemos://resources/my_project/
 ├── .abstract.md           # L0: quick relevance check
 ├── .overview.md           # L1: structure and key points
 └── docs/
@@ -96,222 +83,57 @@ epeius://resources/my_project/
         └── endpoints.md
 ```
 
-## Proof it works
-
-Epeius 0.3.22 has been evaluated on long-conversation user memory (LoCoMo) and multi-turn agent tasks (tau2-bench). Full results and setup details, including knowledge-base QA, are in the [benchmark report](https://blog.Epeius.ai/post/Epeius-benchmark-results/); reproduction scripts live in [./benchmark](./benchmark).
-
-The memory evaluation used [Doubao 2.0 Pro](https://console.volcengine.com/ark/region:cn-beijing/model/detail?Id=doubao-seed-2-0-pro) as the VLM and [Doubao-embedding-vision-251215](https://console.volcengine.com/ark/region:cn-beijing/model/detail?Id=doubao-embedding-vision) as the embedding model.
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/benchmark-dark.svg">
-  <img alt="Benchmark results. LoCoMo accuracy: OpenClaw 24.20% native vs 82.08% with Epeius; Hermes 33.38% vs 82.86%; Claude Code 57.21% vs 80.32%. tau2-bench task success: Retail 70.94% vs 77.81%; Airline 54.38% vs 66.25%." src="docs/images/benchmark-light.svg">
-</picture>
-
-- **User memory (LoCoMo)**: with Epeius, all three agent integrations land at 80–83% accuracy — up from 24–57% on their native memory — while input tokens drop by 34.3–91.0% and query latency by 58.45–66.10%.
-- **Agent experience (tau2-bench)**: experience memory lifts task success by +6.87pp (retail) and +11.87pp (airline) over the same LLM without memory.
-
 ## Quick start
 
 Requires Python 3.10+ and access to an embedding model and a VLM (cloud or local).
 
 ```bash
-pip install Epeius --upgrade
-Epeius-server init      # configure providers and models
-Epeius-server doctor    # check configuration and connectivity
-Epeius-server           # start the server
+git clone https://github.com/mnemos-ai/mnemos.git
+cd mnemos
+python3 main.py
 ```
 
-`init` writes `~/.Epeius/ov.conf`. Supported options include Volcengine, OpenAI, Codex OAuth, Kimi, GLM, and local Ollama. See the [configuration guide](https://docs.Epeius.ai/en/guides/01-configuration) for provider setup and the [quick start docs](https://docs.Epeius.ai/en/getting-started/02-quickstart) for platform instructions.
+That's it. `main.py` boots the server, initializes the context database, and prints the local endpoint — no config files, no daemons, no ceremony. Unlike other memory solutions that make you wire up three services before your first query, Mnemos is running the moment the process starts.
 
-The package includes the `ov` CLI. In another terminal, import a repository and search it:
+In another terminal, use the bundled `mn` CLI:
 
 ```bash
-ov status
-ov add-resource https://github.com/volcengine/Epeius
-# Replace TASK_ID with the returned task_id; repeat until status is completed
-ov task status TASK_ID
-ov ls epeius://resources/
-ov tree epeius://resources/volcengine -L 2
-ov find "what is Epeius"
-ov grep "Epeius" --uri epeius://resources/volcengine/Epeius/docs/en
+mn status
+mn add-resource https://github.com/mnemos-ai/mnemos
+mn ls mnemos://resources/
+mn tree mnemos://resources/mnemos -L 2
+mn find "what is Mnemos"
+mn grep "Mnemos" --uri mnemos://resources/mnemos/docs/en
 ```
 
-`ov find` returns matching context with URIs you can inspect. For client configuration (`ov config`), standalone CLI installs, and index maintenance, see [CLI setup](https://docs.Epeius.ai/en/getting-started/05-cli-setup).
-
-Build your own integration with the [Python](sdk/python/README.md), [Go](sdk/go/README.md), or [TypeScript](sdk/typescript/README.md) SDK, or the [HTTP API](https://docs.Epeius.ai/en/api/01-overview).
+`mn find` returns matching context with URIs you can inspect. Build your own integration with the [Python](sdk/python/README.md), [Go](sdk/go/README.md), or [TypeScript](sdk/typescript/README.md) SDK, or the [HTTP API](https://docs.mnemos.ai/en/api/01-overview).
 
 ## Use it with your agent
 
-Connect your agent to Epeius for cross-session memory. Choose a native integration for automatic recall and session capture, or use MCP to give your agent memory and context tools.
+Connect your agent to Mnemos for cross-session memory. Choose a native integration for automatic recall and session capture, or use MCP to give your agent memory and context tools.
 
-<table>
-<tbody>
-<tr>
-<td align="center" valign="bottom" width="16%">
-<a href="https://docs.Epeius.ai/en/agent-integrations/02-claude-code"><img src="docs/images/integrations/logos/claude-code.png" width="32" height="32" alt=""><br><strong>Claude</strong></a><br>
-<sub>Hooks&nbsp;+&nbsp;MCP</sub>
-</td>
-<td align="center" valign="bottom" width="16%">
-<a href="https://docs.Epeius.ai/en/agent-integrations/04-codex"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/images/integrations/logos/openai-dark.svg"><img src="docs/images/integrations/logos/openai.svg" width="32" height="32" alt=""></picture><br><strong>Codex</strong></a><br>
-<sub>Hooks&nbsp;+&nbsp;MCP</sub>
-</td>
-<td align="center" valign="bottom" width="16%">
-<a href="https://docs.Epeius.ai/en/agent-integrations/12-cursor"><img src="docs/images/integrations/logos/cursor.png" width="32" height="32" alt=""><br><strong>Cursor</strong></a><br>
-<sub>Hooks&nbsp;+&nbsp;MCP</sub>
-</td>
-<td align="center" valign="bottom" width="16%">
-<a href="https://docs.Epeius.ai/en/agent-integrations/13-trae"><img src="docs/images/integrations/logos/trae.png" width="32" height="32" alt=""><br><strong>TRAE</strong></a><br>
-<sub>Hooks&nbsp;+&nbsp;MCP</sub>
-</td>
-<td align="center" valign="bottom" width="16%">
-<a href="https://docs.Epeius.ai/en/agent-integrations/03-openclaw"><img src="docs/images/integrations/logos/openclaw.png" width="32" height="32" alt=""><br><strong>OpenClaw</strong></a><br>
-<sub>Context&nbsp;engine</sub>
-</td>
-<td align="center" valign="bottom" width="16%">
-<a href="https://docs.Epeius.ai/en/agent-integrations/05-hermes"><img src="docs/images/integrations/logos/hermes-agent.png" width="32" height="32" alt=""><br><strong>Hermes</strong></a><br>
-<sub>Built-in</sub>
-</td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-<td align="center" valign="bottom" width="16%">
-<a href="https://docs.Epeius.ai/en/agent-integrations/10-opencode"><img src="docs/images/integrations/logos/opencode.png" width="32" height="32" alt=""><br><strong>OpenCode</strong></a><br>
-<sub>Plugin&nbsp;+&nbsp;MCP</sub>
-</td>
-<td align="center" valign="bottom" width="16%">
-<a href="https://docs.Epeius.ai/en/agent-integrations/11-pi"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/images/integrations/logos/pi-dark.svg"><img src="docs/images/integrations/logos/pi.svg" width="32" height="32" alt=""></picture><br><strong>pi</strong></a><br>
-<sub>Native&nbsp;extension</sub>
-</td>
-<td align="center" valign="bottom" width="16%">
-<a href="docs/images/agents/en/deerflow-memory-manager.md"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/images/integrations/logos/deerflow-dark.svg"><img src="docs/images/integrations/logos/deerflow.svg" width="32" height="32" alt=""></picture><br><strong>DeerFlow</strong></a><br>
-<sub>Plugin&nbsp;+&nbsp;MCP</sub>
-</td>
-<td align="center" valign="bottom" width="16%">
-<a href="https://docs.Epeius.ai/en/agent-integrations/17-dsh"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/images/integrations/logos/dsh-dark.svg"><img src="docs/images/integrations/logos/dsh.svg" width="32" height="32" alt=""></picture><br><strong>DSH</strong></a><br>
-<sub>Plugin&nbsp;+&nbsp;MCP</sub>
-</td>
-<td align="center" valign="bottom" width="16%">
-<a href="docs/images/agents/en/doubao-work.md"><img src="docs/images/integrations/logos/doubao-work.png" width="32" height="32" alt=""><br><strong>Doubao&nbsp;Work</strong></a><br>
-<sub>Connector</sub>
-</td>
-<td align="center" valign="bottom" width="16%">
-<a href="https://docs.Epeius.ai/en/agent-integrations/07-langchain-langgraph"><img src="docs/images/integrations/logos/langchain.svg" width="32" height="32" alt=""><br><strong>LangChain</strong></a><br>
-<sub>Tools&nbsp;+&nbsp;store</sub>
-</td>
-</tr>
-</tbody>
-</table>
+| Integration | Mode |
+|---|---|
+| **Claude** | Hooks + MCP |
+| **Codex** | Hooks + MCP |
+| **Cursor** | Hooks + MCP |
+| **OpenClaw** | Context engine |
+| **Hermes** | Built-in |
+| **LangChain / LangGraph** | Tools + store |
+| **MCP clients** | Tools |
 
-**General integrations**
-
-<table>
-<tr>
-<td align="center" valign="bottom" width="50%">
-<a href="https://docs.Epeius.ai/en/agent-integrations/15-agent-plugins"><img src="docs/images/integrations/logos/agent-plugins.svg" width="32" height="32" alt=""><br><strong>Agent&nbsp;Plugins&nbsp;1.0</strong></a>
-</td>
-<td align="center" valign="bottom" width="50%">
-<a href="https://docs.Epeius.ai/en/agent-integrations/06-mcp-clients"><img src="docs/images/integrations/logos/mcp.svg" width="32" height="32" alt=""><br><strong>MCP&nbsp;clients</strong></a>
-</td>
-</tr>
-</table>
-
-For setup instructions and integration details, see [Integrations](https://Epeius.ai/integrations).
-
-## Desktop App (Beta)
-
-The desktop app is a console for macOS and Windows x64 (beta). It configures supported local agent integrations, inspects recall and capture events in sessions, and syncs local memories and skills to Epeius.
-
-Download:
-
-- [macOS Apple Silicon (arm64)](https://lf3-cdn-tos.bytegoofy.com/obj/tron-demo/7654844610543360265/420238785/0.0.19/darwin-arm64/Epeius-helper-0.0.19-arm64.dmg)
-- [macOS Intel (x64)](https://lf3-cdn-tos.bytegoofy.com/obj/tron-demo/7654844610543360265/420238785/0.0.19/darwin-x64/Epeius-helper-0.0.19-x64.dmg)
-- [Windows (x64)](https://lf3-cdn-tos.bytegoofy.com/obj/tron-demo/7654844610543360265/420238785/0.0.19/win32-x64/Epeius-helper-0.0.19-x64.exe)
-
-## epeiusBot
-
-epeiusBot is an AI agent framework built on top of Epeius:
-
-```bash
-pip install "Epeius[bot]"
-Epeius-server --with-bot
-ov chat   # in another terminal
-```
-
-The official Docker image bundles epeiusBot and starts it by default alongside the server and console UI. Details: [epeiusBot guide](https://docs.Epeius.ai/en/guides/17-epeiusbot).
+For setup instructions, see [Integrations](https://mnemos.ai/integrations).
 
 ## Deploy in production
 
-Run the open-source server in your own environment under [AGPLv3](LICENSE). It requires no activation key. Start with [server setup](https://docs.Epeius.ai/en/getting-started/03-quickstart-server) or the [Docker and deployment guide](https://docs.Epeius.ai/en/guides/03-deployment).
-
-The server supports [accounts and user isolation](https://docs.Epeius.ai/en/concepts/11-multi-tenant) and opt-in [resource ACLs](https://docs.Epeius.ai/en/concepts/15-acl). Configure [authentication](https://docs.Epeius.ai/en/guides/04-authentication) before exposing it beyond localhost.
-
-## Commercial editions
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-<img src="docs/images/commercial-saas.png" alt="Managed SaaS" width="100%" />
-
-<h3>☁️ Managed SaaS</h3>
-<p><a href="https://www.volcengine.com/product/Epeius-service">Volcano Engine</a> hosts and operates Epeius. Personal and Enterprise plans cover individual and team use, with migration tooling for open-source deployments. See the <a href="https://docs.volcengine.com/docs/84313/2374478">service documentation</a> for plans and limits. Hosting outside China is planned on <a href="https://www.byteplus.com">BytePlus</a>.</p>
-
-</td>
-<td width="50%" valign="top">
-
-<img src="docs/images/commercial-self-hosted.png" alt="Self-Managed" width="100%" />
-
-<h3>🏢 Self-Managed</h3>
-<p>Deploy in your own cloud account / VPC (BYOC) or an offline environment. This edition adds distributed deployment and official support, activated by a license key. <a href="https://docs.google.com/forms/d/e/1FAIpQLScQqwsm7fvKdjtNiW5rWNXJjoHPtedVzLsKSMJgObtsj2_udA/viewform">Contact the team</a>.</p>
-
-</td>
-</tr>
-</table>
-
-## Research
-
-**Memory that evolves with your agent.** epeiusMem develops an event-driven approach to extracting, updating, and consolidating long-term memory, giving stateful agents a way to retain useful experience as interactions accumulate. Epeius open-sources a subset of these core capabilities.
-
-> **epeiusMem: A Memory Base Management System for Stateful LLM-based Applications**<br>
-> Jiajie Fu, Junwen Chen, Mengzhao Wang, Aoxiang He, Maojia Sheng, Xiangyu Ke, Yifan Zhu, and Yunjun Gao.<br>
-> arXiv:2605.29640, 2026. Presented at VLDB 2026 in September.<br>
-> 📄 [Read the paper on arXiv](https://arxiv.org/abs/2605.29640) · [Read PDF](https://arxiv.org/pdf/2605.29640)
-
-**Directory structure as retrieval context.** This paper provides the formal foundations, index design, and experimental evidence behind Epeius’s directory-aware retrieval. It defines directory-scoped query and maintenance operations and introduces TrieHI, which Epeius integrates to resolve directory scopes before vector ranking. This connects the filesystem paradigm to retrieval: agents can search a project or memory subtree, retain its surrounding context, and reorganize it as knowledge evolves.
-
-> **Directory-Aware Query and Maintenance in Vector Databases**<br>
-> Mengzhao Wang, Zheng Gong, Jingpei Hu, Jiajie Fu, Maojia Sheng, Junwen Chen, and Yifan Zhu.<br>
-> arXiv:2606.16903, 2026. Accepted by ICDE.<br>
-> 📄 [Read the paper on arXiv](https://arxiv.org/abs/2606.16903) · [Read PDF](https://arxiv.org/pdf/2606.16903)
-
-**Retrieve the evidence you need with fewer tokens.** epeiusRAG combines semantic search with document structure, exposing relevant directory segments as evidence gaps arise. Its core mechanisms are integrated into Epeius. The paper further explores reusing retrieval traces and escalating to multi-round retrieval only when needed, reducing repeated exploration while preserving answer quality.
-
-> **epeiusRAG: Accurate and Token-efficient Retrieval-augmented Generation over Structured Documents**<br>
-> Peiyuan Gao, Gaoyuan Zhang, Haojie Qin, Yahui Sun, Qianyi Zhang, Yunhao Zhang, Zeyu Wang, and Wei Lu.<br>
-> arXiv:2609.11390, 2026. Submitted.<br>
-> 📄 [Read the paper on arXiv](https://arxiv.org/abs/2609.11390) · [Read PDF](https://arxiv.org/pdf/2609.11390)
-
-## Partner Projects
-
-- [deer-flow](https://github.com/bytedance/deer-flow) - Open-source long-horizon SuperAgent harness
-- [NoKV](https://github.com/NoKV-Lab/NoKV) - AI native distributed file system
-- [loopx](https://github.com/huangruiteng/loopx) - Lightweight loop engineering state kernel
-- [Hermes Agent](https://github.com/NousResearch/hermes-agent) - The agent that grows with you
-
-To propose a partnership, [open an issue](https://github.com/volcengine/Epeius/issues).
+Run the open-source server in your own environment under [AGPLv3](LICENSE). It requires no activation key. The server supports accounts and user isolation, plus opt-in resource ACLs. Configure authentication before exposing it beyond localhost.
 
 ## Community & Contributing
 
-- **Docs**: [docs.Epeius.ai](https://docs.Epeius.ai/) · [FAQ](https://docs.Epeius.ai/en/faq/faq)
-- **Blog**: [blog.Epeius.ai](https://blog.Epeius.ai/)
-- **Team**: [About us](https://docs.Epeius.ai/en/about/01-about-us)
-- **Chat**: 📱 [Lark Group](https://docs.Epeius.ai/en/about/01-about-us#lark-group) · 💬 [WeChat](https://docs.Epeius.ai/en/about/01-about-us#wechat-group) · 🎮 [Discord](https://discord.com/invite/eHvx8E9XF3) · 🐦 [X](https://x.com/Epeiusai)
+- **Docs**: [docs.mnemos.ai](https://docs.mnemos.ai/)
+- **Blog**: [blog.mnemos.ai](https://blog.mnemos.ai/)
+- **Chat**: 📱 [Lark Group](https://docs.mnemos.ai/en/about/01-about-us#lark-group) · 💬 [WeChat](https://docs.mnemos.ai/en/about/01-about-us#wechat-group) · 🎮 [Discord](https://discord.gg/mnemos) · 🐦 [X](https://x.com/mnemosai)
 - **Contribute**: bug fixes and new features are both welcome — see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-<a href="https://github.com/volcengine/Epeius/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=volcengine/Epeius&amp;columns=15&amp;max=120" alt="Epeius contributors" />
-</a>
 
 ## Security and privacy
 
@@ -319,9 +141,6 @@ For vulnerability reporting and supported versions, see [SECURITY.md](SECURITY.m
 
 ## License
 
-The Epeius project uses different licenses for different components:
-
-- **Main Project**: AGPLv3 - see the [LICENSE](./LICENSE) file for details
-- **crates/ov\_cli**: Apache 2.0 - see the [LICENSE](./crates/LICENSE) for details
-- **examples**: Apache 2.0 - see the [LICENSE](./examples/LICENSE) for details
-- **third\_party**: Respective original licenses of third-party projects
+- **Main Project**: AGPLv3 — see [LICENSE](./LICENSE)
+- **SDKs**: Apache 2.0 — see [LICENSE](./sdk/LICENSE)
+- **Examples**: Apache 2.0 — see [LICENSE](./examples/LICENSE)
