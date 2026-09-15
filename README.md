@@ -2,7 +2,7 @@
 
 <a href="https://Epeius.ai/" target="_blank">
   <picture>
-    <img alt="Epeius" src="docs/images/ov-logo.png" width="200px" height="auto">
+    <img alt="Epeius" src="[docs/images/ov-logo.png](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv6KPnR764HTVeyp3ijLgpQ3h1i60wGQhRAvqyC413sg&s=10)" width="200px" height="auto">
   </picture>
 </a>
 
