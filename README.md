@@ -42,47 +42,6 @@ Epeius organizes context as a virtual filesystem under `Epeius://`. Agents opera
 - **Search within the directory structure.** Vector search finds candidate directories, then explores their contents. `find` runs a query directly; `search` uses session context to plan retrieval.
 - **Turn sessions into memory.** Committing a session archives the conversation and starts background extraction. Memory policies control what is retained; candidates are compared with existing memories for creation, merging, or skipping.
 
-```
-Epeius://
-├── resources/              # Resources: project docs, repos, web pages, etc.
-│   └── my_project/
-│       ├── docs/
-│       │   ├── api/
-│       │   └── tutorials/
-│       └── src/
-└── user/
-    └── {user_id}/
-        ├── memories/
-        │   └── preferences/
-        │       ├── writing_style
-        │       └── coding_habits
-        ├── resources/
-        │   └── private_project/
-        ├── skills/
-        │   ├── search_code
-        │   └── analyze_data
-        └── peers/
-            └── web-visitor-alice/
-```
-
-The three loading tiers:
-
-- **L0 (Abstract)**: a one-sentence summary for quick relevance checks.
-- **L1 (Overview)**: core information and usage scenarios for planning.
-- **L2 (Details)**: the full original data, read only when needed.
-
-```
-Epeius://resources/my_project/
-├── .abstract.md           # L0: quick relevance check
-├── .overview.md           # L1: structure and key points
-└── docs/
-    ├── .abstract.md
-    ├── .overview.md
-    └── api/
-        ├── auth.md         # L2: full content, loaded on demand
-        └── endpoints.md
-```
-
 ## Quick start
 
 Requires Python 3.10+ and access to an embedding model and a VLM (cloud or local).
@@ -94,19 +53,6 @@ python3 main.py
 ```
 
 That's it. `main.py` boots the server, initializes the context database, and prints the local endpoint — no config files, no daemons, no ceremony. Unlike other memory solutions that make you wire up three services before your first query, Epeius is running the moment the process starts.
-
-In another terminal, use the bundled `mn` CLI:
-
-```bash
-mn status
-mn add-resource https://github.com/Epeius-ai/Epeius
-mn ls Epeius://resources/
-mn tree Epeius://resources/Epeius -L 2
-mn find "what is Epeius"
-mn grep "Epeius" --uri Epeius://resources/Epeius/docs/en
-```
-
-`mn find` returns matching context with URIs you can inspect. Build your own integration with the [Python](sdk/python/README.md), [Go](sdk/go/README.md), or [TypeScript](sdk/typescript/README.md) SDK, or the [HTTP API](https://docs.Epeius.ai/en/api/01-overview).
 
 ## Use it with your agent
 
