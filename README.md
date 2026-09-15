@@ -2,7 +2,7 @@
 
 <a href="https://Epeius.ai/" target="_blank">
   <picture>
-    <img alt="Epeius" src="[docs/images/ov-logo.png](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv6KPnR764HTVeyp3ijLgpQ3h1i60wGQhRAvqyC413sg&s=10)" width="200px" height="auto">
+    <img alt="Epeius" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv6KPnR764HTVeyp3ijLgpQ3h1i60wGQhRAvqyC413sg&s=10" width="200px" height="auto">
   </picture>
 </a>
 
@@ -33,7 +33,7 @@ English / [中文](README_CN.md) / [日本語](README_JA.md)
 
 Epeius is an open-source context database for AI agents. It gives agents a place to store knowledge, remember users, and reuse experience across sessions.
 
-Epeius organizes context as a virtual filesystem under `viking://`. Agents can operate on it like files: use `ls`, `tree`, `read`, and `write` to browse directories, read, create, and edit content, or search within a directory. Directory summaries support on-demand loading.
+Epeius organizes context as a virtual filesystem under `epeius://`. Agents can operate on it like files: use `ls`, `tree`, `read`, and `write` to browse directories, read, create, and edit content, or search within a directory. Directory summaries support on-demand loading.
 
 <a href="https://Epeius.ai/studio" target="_blank" rel="noopener noreferrer">
   <picture>
@@ -46,15 +46,15 @@ Epeius organizes context as a virtual filesystem under `viking://`. Agents can o
 
 ## Why Epeius
 
-- **One filesystem for all context.** Resources hold documents and code; memories retain user preferences and experience; skills define how to perform tasks. Each has a `viking://` URI for browsing and retrieval. → [Viking URI](https://docs.Epeius.ai/en/concepts/04-viking-uri) · [Context types](https://docs.Epeius.ai/en/concepts/02-context-types)
+- **One filesystem for all context.** Resources hold documents and code; memories retain user preferences and experience; skills define how to perform tasks. Each has a `epeius://` URI for browsing and retrieval. → [epeius URI](https://docs.Epeius.ai/en/concepts/04-epeius-uri) · [Context types](https://docs.Epeius.ai/en/concepts/02-context-types)
 - **Load only the context you need.** Directory abstracts (L0) and overviews (L1) help agents decide when to read full content (L2). → [Context layers](https://docs.Epeius.ai/en/concepts/03-context-layers)
 - **Search within the directory structure.** Vector search finds candidate directories, then explores their contents. `find` runs a query directly; `search` can use session context to plan retrieval. → [Retrieval](https://docs.Epeius.ai/en/concepts/07-retrieval)
-- **Turn sessions into memory.** Committing a session archives the conversation and starts background extraction. Memory policies control what is retained; candidates are compared with existing memories for creation, merging, or skipping. With VikingBot enabled, `ov compile` uses a skill to organize source material into a wiki, knowledge graph, or report. → [Sessions](https://docs.Epeius.ai/en/concepts/08-session) · [Context compilation](https://docs.Epeius.ai/en/context-compilation/01-overview)
+- **Turn sessions into memory.** Committing a session archives the conversation and starts background extraction. Memory policies control what is retained; candidates are compared with existing memories for creation, merging, or skipping. With epeiusBot enabled, `ov compile` uses a skill to organize source material into a wiki, knowledge graph, or report. → [Sessions](https://docs.Epeius.ai/en/concepts/08-session) · [Context compilation](https://docs.Epeius.ai/en/context-compilation/01-overview)
 
 [Architecture](https://docs.Epeius.ai/en/concepts/01-architecture) · [Design rationale](https://blog.Epeius.ai/post/Epeius-context-database/)
 
 ```
-viking://
+epeius://
 ├── resources/              # Resources: project docs, repos, web pages, etc.
 │   └── my_project/
 │       ├── docs/
@@ -85,7 +85,7 @@ The three loading tiers:
 Semantically processed directories carry L0/L1 summaries, so agents can judge relevance before reading full files:
 
 ```
-viking://resources/my_project/
+epeius://resources/my_project/
 ├── .abstract.md           # L0: quick relevance check
 ├── .overview.md           # L1: structure and key points
 └── docs/
@@ -130,10 +130,10 @@ ov status
 ov add-resource https://github.com/volcengine/Epeius
 # Replace TASK_ID with the returned task_id; repeat until status is completed
 ov task status TASK_ID
-ov ls viking://resources/
-ov tree viking://resources/volcengine -L 2
+ov ls epeius://resources/
+ov tree epeius://resources/volcengine -L 2
 ov find "what is Epeius"
-ov grep "Epeius" --uri viking://resources/volcengine/Epeius/docs/en
+ov grep "Epeius" --uri epeius://resources/volcengine/Epeius/docs/en
 ```
 
 `ov find` returns matching context with URIs you can inspect. For client configuration (`ov config`), standalone CLI installs, and index maintenance, see [CLI setup](https://docs.Epeius.ai/en/getting-started/05-cli-setup).
@@ -228,9 +228,9 @@ Download:
 - [macOS Intel (x64)](https://lf3-cdn-tos.bytegoofy.com/obj/tron-demo/7654844610543360265/420238785/0.0.19/darwin-x64/Epeius-helper-0.0.19-x64.dmg)
 - [Windows (x64)](https://lf3-cdn-tos.bytegoofy.com/obj/tron-demo/7654844610543360265/420238785/0.0.19/win32-x64/Epeius-helper-0.0.19-x64.exe)
 
-## VikingBot
+## epeiusBot
 
-VikingBot is an AI agent framework built on top of Epeius:
+epeiusBot is an AI agent framework built on top of Epeius:
 
 ```bash
 pip install "Epeius[bot]"
@@ -238,7 +238,7 @@ Epeius-server --with-bot
 ov chat   # in another terminal
 ```
 
-The official Docker image bundles VikingBot and starts it by default alongside the server and console UI. Details: [VikingBot guide](https://docs.Epeius.ai/en/guides/17-vikingbot).
+The official Docker image bundles epeiusBot and starts it by default alongside the server and console UI. Details: [epeiusBot guide](https://docs.Epeius.ai/en/guides/17-epeiusbot).
 
 ## Deploy in production
 
@@ -271,9 +271,9 @@ The server supports [accounts and user isolation](https://docs.Epeius.ai/en/conc
 
 ## Research
 
-**Memory that evolves with your agent.** VikingMem develops an event-driven approach to extracting, updating, and consolidating long-term memory, giving stateful agents a way to retain useful experience as interactions accumulate. Epeius open-sources a subset of these core capabilities.
+**Memory that evolves with your agent.** epeiusMem develops an event-driven approach to extracting, updating, and consolidating long-term memory, giving stateful agents a way to retain useful experience as interactions accumulate. Epeius open-sources a subset of these core capabilities.
 
-> **VikingMem: A Memory Base Management System for Stateful LLM-based Applications**<br>
+> **epeiusMem: A Memory Base Management System for Stateful LLM-based Applications**<br>
 > Jiajie Fu, Junwen Chen, Mengzhao Wang, Aoxiang He, Maojia Sheng, Xiangyu Ke, Yifan Zhu, and Yunjun Gao.<br>
 > arXiv:2605.29640, 2026. Presented at VLDB 2026 in September.<br>
 > 📄 [Read the paper on arXiv](https://arxiv.org/abs/2605.29640) · [Read PDF](https://arxiv.org/pdf/2605.29640)
@@ -285,9 +285,9 @@ The server supports [accounts and user isolation](https://docs.Epeius.ai/en/conc
 > arXiv:2606.16903, 2026. Accepted by ICDE.<br>
 > 📄 [Read the paper on arXiv](https://arxiv.org/abs/2606.16903) · [Read PDF](https://arxiv.org/pdf/2606.16903)
 
-**Retrieve the evidence you need with fewer tokens.** VikingRAG combines semantic search with document structure, exposing relevant directory segments as evidence gaps arise. Its core mechanisms are integrated into Epeius. The paper further explores reusing retrieval traces and escalating to multi-round retrieval only when needed, reducing repeated exploration while preserving answer quality.
+**Retrieve the evidence you need with fewer tokens.** epeiusRAG combines semantic search with document structure, exposing relevant directory segments as evidence gaps arise. Its core mechanisms are integrated into Epeius. The paper further explores reusing retrieval traces and escalating to multi-round retrieval only when needed, reducing repeated exploration while preserving answer quality.
 
-> **VikingRAG: Accurate and Token-efficient Retrieval-augmented Generation over Structured Documents**<br>
+> **epeiusRAG: Accurate and Token-efficient Retrieval-augmented Generation over Structured Documents**<br>
 > Peiyuan Gao, Gaoyuan Zhang, Haojie Qin, Yahui Sun, Qianyi Zhang, Yunhao Zhang, Zeyu Wang, and Wei Lu.<br>
 > arXiv:2609.11390, 2026. Submitted.<br>
 > 📄 [Read the paper on arXiv](https://arxiv.org/abs/2609.11390) · [Read PDF](https://arxiv.org/pdf/2609.11390)
